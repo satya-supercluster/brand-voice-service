@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "Brand Voice Service API",
+    "description": "API collection for Brand Voice Consistency Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Create Brand Profile - Professional",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust_prof_001\",\n  \"brandName\": \"TechCorp Enterprise\",\n  \"sampleContent\": \"We are a professional enterprise technology company focused on delivering innovative solutions. Our strategic approach ensures optimal results for our clients. We believe in excellence, efficiency, and partnership. Our commitment to quality drives everything we do.\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/profiles",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "profiles"]
+        }
+      }
+    },
+    {
+      "name": "Create Brand Profile - Casual",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust_casual_001\",\n  \"brandName\": \"Cool Startup Inc\",\n  \"sampleContent\": \"Hey there! We're super excited about our awesome products. Check out what we're building - it's gonna be amazing! We love connecting with our community and hearing your feedback. Let's make something cool together!\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/profiles",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "profiles"]
+        }
+      }
+    },
+    {
+      "name": "Get Brand Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/profiles/{{customer_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "profiles", "{{customer_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Validate Content - On Brand (Professional)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust_prof_001\",\n  \"content\": \"Our professional team delivers innovative enterprise solutions with strategic focus and operational excellence.\",\n  \"contentType\": \"email\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/validate",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "validate"]
+        }
+      }
+    },
+    {
+      "name": "Validate Content - Off Brand (Too Casual)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust_prof_001\",\n  \"content\": \"Hey folks! Check out our super cool new features! They're totally awesome and you're gonna love them!\",\n  \"contentType\": \"social\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/validate",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "validate"]
+        }
+      }
+    },
+    {
+      "name": "Validate Content - Mixed Tone",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust_prof_001\",\n  \"content\": \"Our innovative solutions are super amazing! We provide professional services that are totally awesome.\",\n  \"contentType\": \"ad\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/validate",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "validate"]
+        }
+      }
+    },
+    {
+      "name": "Delete Brand Profile",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/brand-voice/profiles/{{customer_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "brand-voice", "profiles", "{{customer_id}}"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "customer_id",
+      "value": "cust_prof_001",
+      "type": "string"
+    }
+  ]
+}
