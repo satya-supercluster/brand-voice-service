@@ -1,4 +1,4 @@
-# Quick Start Guide - 5 Minutes to Running Service
+# Quick Start Guide
 
 ## Prerequisites Check
 ```bash

@@ -1,9 +1,5 @@
 # Interview & Presentation Practice Guide
 
-## For Your Success at Typeface! 🚀
-
----
-
 ## Part 1: Understanding Your Project (Study This First)
 
 ### What Problem Does It Solve? (Elevator Pitch - 30 seconds)
